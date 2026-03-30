@@ -1,3 +1,4 @@
+import pickle
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -8,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score
 
 #Load data
-df= pd.read_csv('/content/European_Bank.csv')
+df= pd.read_csv(r'E:\Jopaul\Prject app\European_Bank.csv')
 
 #Feature Engineering
 df['BalanceSalaryRatio']=df['Balance']/(df['EstimatedSalary']+1)
@@ -88,3 +89,12 @@ results.groupby('risk_category')['Churn Probability'].mean()
 results['Age'] = x_test[:, list(x.columns).index('Age')]
 results.groupby('risk_category')['Age'].mean()
 print(results.head())
+
+# Save model
+pickle.dump(model_rf, open("model.pkl", "wb"))
+
+# Save scaler
+pickle.dump(scaler, open("scaler.pkl", "wb"))
+
+# Save feature columns
+pickle.dump(x.columns.tolist(), open("features.pkl", "wb"))
