@@ -77,7 +77,7 @@ def risk_category(p):
     return 'Loww Risk'
   if p<0.5:
     return 'Medium Risk'
-  else:
+  if p>0.5:
     return 'High Risk'
 results["risk_category"]= results["Churn Probability"].apply(risk_category)
 print(results.head())
