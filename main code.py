@@ -1,4 +1,4 @@
-import pickle
+import joblib
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -91,10 +91,10 @@ results.groupby('risk_category')['Age'].mean()
 print(results.head())
 
 # Save model
-pickle.dump(model_rf, open("model.pkl", "wb"))
+joblib.dump(model_rf, open("model.pkl", "wb"))
 
 # Save scaler
-pickle.dump(scaler, open("scaler.pkl", "wb"))
+joblib.dump(scaler, open("scaler.pkl", "wb"))
 
 # Save feature columns
-pickle.dump(x.columns.tolist(), open("features.pkl", "wb"))
+joblib.dump(x.columns.tolist(), open("features.pkl", "wb"))
