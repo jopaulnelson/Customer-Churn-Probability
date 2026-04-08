@@ -3,9 +3,9 @@ import numpy as np
 import joblib
 
 # Load model and tools
-model = joblib.load(open("model.pkl", "wb"))
-scaler = joblib.load(open("scaler.pkl", "wb"))
-features = joblib.load(open("features.pkl", "wb"))
+model = joblib.load(open("model.pkl", "rb"))
+scaler = joblib.load(open("scaler.pkl", "rb"))
+features = joblib.load(open("features.pkl", "rb"))
 
 st.title("Customer Churn Risk Predictor")
 
