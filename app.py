@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import jolib
+import joblib
 
 # Load model and tools
 model = jolib.load(open("model.pkl", "wb"))
