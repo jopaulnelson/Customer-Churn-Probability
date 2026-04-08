@@ -75,7 +75,7 @@ results= pd.DataFrame({'Actual': y_test, 'Predicted':y_pred, 'Churn Probability'
 def risk_category(p):
   if p<0.3:
     return 'Loww Risk'
-  if p<0.7:
+  if p<0.5:
     return 'Medium Risk'
   else:
     return 'High Risk'
