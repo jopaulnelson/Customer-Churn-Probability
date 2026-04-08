@@ -1,15 +1,15 @@
 import streamlit as st
 import numpy as np
 import pickle
-import os
+#import os
 
 # Load model and tools
-model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
-model = pickle.load(open("model.pkl", "rb"))
-scaler_path = os.path.join(os.path.dirname(__file__), "scaler.pkl")
-scaler = pickle.load(open("scaler.pkl", "rb"))
-features_path = os.path.join(os.path.dirname(__file__), "features.pkl")
-features = pickle.load(open("features.pkl", "rb"))
+#model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
+model = pickle.load(open("model.pkl", "wb"))
+#scaler_path = os.path.join(os.path.dirname(__file__), "scaler.pkl")
+scaler = pickle.load(open("scaler.pkl", "wb"))
+#features_path = os.path.join(os.path.dirname(__file__), "features.pkl")
+features = pickle.load(open("features.pkl", "wb"))
 
 st.title("Customer Churn Risk Predictor")
 
