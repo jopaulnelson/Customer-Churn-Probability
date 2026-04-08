@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # Load model and tools
-model = jolib.load(open("model.pkl", "wb"))
+model = joblib.load(open("model.pkl", "wb"))
 scaler = joblib.load(open("scaler.pkl", "wb"))
 features = joblib.load(open("features.pkl", "wb"))
 
